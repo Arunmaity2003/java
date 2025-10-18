@@ -1,24 +1,35 @@
-class maxMin {
-    static void findMaxMin(int arr[]) {
-        int max = arr[0];
-        int min = arr[0];
 
-        for (int i = 1; i < arr.length; i++) {
-            if (arr[i] > max) {
-                max = arr[i];
+import java.util.Scanner;
+
+class maxMin {
+
+    static void maxmin(int[] arr) {
+        int minimum = arr[0];
+        int maximum = arr[0];
+
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] > maximum) {
+                maximum = arr[i];
             }
-            if (arr[i] < min) {
-                min = arr[i];
+            if (arr[i] < minimum) {
+                minimum = arr[i];
             }
         }
 
-        System.out.println("Max: " + max);
-        System.out.println("Min: " + min);
+        System.out.println("the max is : " + maximum);
+        System.out.println("the min is : " + minimum);
     }
 
     public static void main(String[] args) {
-        int[] arr = {2,5,8,0,5};
-        
-        findMaxMin(arr);
+        Scanner in = new Scanner(System.in);
+        int[] arr = new int[5];
+
+        System.out.println("Enter the 5 elements: ");
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = in.nextInt();
+        }
+
+        maxmin(arr);
+
     }
 }

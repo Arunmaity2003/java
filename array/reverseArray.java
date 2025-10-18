@@ -1,23 +1,31 @@
 
 import java.util.Arrays;
+import java.util.Scanner;
 
 class reverseArray {
 
-    static int[] reverse(int[] arr){
-        int n = arr.length;
-        int i = 0;
-        int j = n-1;
-        while(i < j){
-            int temp = arr[i];
-            arr[i] = arr[j];
-            arr[j] = temp;
-            i++;
-            j--;
-        }
-        return arr;
-    }
     public static void main(String[] args) {
-        int[] arr = {1,2,3,4,5,6,7};
-        System.out.println(Arrays.toString(reverse(arr)));
+        Scanner in = new Scanner(System.in);
+
+        int[] arr = new int[5];
+
+        System.out.println("Enter 5 numbers:");
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = in.nextInt();
+        }
+
+        // Reverse array
+        int start = 0;
+        int end = arr.length - 1;
+        while (start < end) {
+            int temp = arr[start];
+            arr[start] = arr[end];
+            arr[end] = temp;
+            start++;
+            end--;
+        }
+
+        // Print reversed array
+        System.out.println("Reversed array: " + Arrays.toString(arr));
     }
 }
